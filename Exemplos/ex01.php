@@ -1,4 +1,5 @@
 <?php
+	require "docs/header.php";
 	require "docs/nav.php";
 
 	echo "Hello World!";
@@ -70,6 +71,7 @@
 <?php
 	$conteudo = <<<HTML
 	<!doctype html>
+	<html>
 		<head>
 			<title>Aula de PHP 7</title>
 		</head>
@@ -96,3 +98,5 @@
 		echo "<img src='{$url}' width='30%' />";
 	}
 ?>
+
+<?php require "docs/footer.php" ?>
