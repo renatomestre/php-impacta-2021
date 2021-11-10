@@ -20,6 +20,8 @@
             </li>
         </ul>
         <div class="navbar-text">
+            <span class="mr-5">Olá visitante</span>
+            <span class="mr-5">Login</span>
             Impacta Sales Tec
         </div>
     </div>

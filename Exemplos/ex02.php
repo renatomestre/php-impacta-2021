@@ -58,8 +58,27 @@
 <p><?="Aula sobre " . AULA?></p>
 
 <h4>Trabalhando com ternários</h4>
-<p><?="Cliente: " . ($tipo == 0 ? "Inativo" : "Ativo")?></p>
-<p><?="Associado: " . ($associado == 0 ? "Não" : "Sim")?></p>
+<p><?="Cliente: " . mb_strtoupper($_GET["nome_cliente"] ?? "", mb_internal_encoding())?></p>
+<p><?="Tipo: " . ($tipo == 1 ? "Ativo" : "Inativo")?></p>
+<p><?="Associado: " . ($associado == 1 ? "Sim" : "Não")?></p>
 <p><?="Query param ?status=$status"?></p>
+
+<hr>
+<p><a href="ex02.php?tipo=1&status=2&associado=1&user=1">Verificar cliente</a></p>
+<hr>
+
+<form action="" method="get">
+	<div>
+		<label for="nome_cliente">Cliente</label>
+		<input type="text" name="nome_cliente">
+		<button>Confirmar</button>
+	</div>
+	<div>
+		<input type="hidden" name="tipo" value="1">
+		<input type="hidden" name="user" value="0">
+		<input type="hidden" name="associado" value="1">
+		<input type="hidden" name="status" value="0">
+	</div>
+</form>
 
 <?php require "docs/footer.php" ?>
