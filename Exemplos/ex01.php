@@ -38,9 +38,9 @@
 	{
 		$objeto = new stdClass();
 		
-		$objeto->nome = "Paçoca";
-		$objeto->sobrenome = "Wandenkolk";
-		$objeto->profissao = "Um gato à toa";
+		$objeto->nome = "Albert";
+		$objeto->sobrenome = "Einstein";
+		$objeto->profissao = "Cientista";
 		
 		echo "<pre>";
 		var_dump($objeto);

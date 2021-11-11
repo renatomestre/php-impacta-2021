@@ -58,10 +58,6 @@
 <p><?="Aula sobre " . AULA?></p>
 
 <h4>Trabalhando com ternários</h4>
-<p><?="Cliente: " . mb_strtoupper($_GET["nome_cliente"] ?? "", mb_internal_encoding())?></p>
-<p><?="Tipo: " . ($tipo == 1 ? "Ativo" : "Inativo")?></p>
-<p><?="Associado: " . ($associado == 1 ? "Sim" : "Não")?></p>
-<p><?="Query param ?status=$status"?></p>
 
 <hr>
 <p><a href="ex02.php?tipo=1&status=2&associado=1&user=1">Verificar cliente</a></p>
@@ -70,7 +66,7 @@
 <form action="" method="get">
 	<div>
 		<label for="nome_cliente">Cliente</label>
-		<input type="text" name="nome_cliente">
+		<input type="text" name="nome_cliente" placeholder="Digite o nome">
 		<button>Confirmar</button>
 	</div>
 	<div>
@@ -80,5 +76,10 @@
 		<input type="hidden" name="status" value="0">
 	</div>
 </form>
+
+<p><?="Nome: " . mb_strtoupper($_GET["nome_cliente"] ?? "", mb_internal_encoding())?></p>
+<p><?="Tipo: " . ($tipo == 1 ? "Ativo" : "Inativo")?></p>
+<p><?="Associado: " . ($associado == 1 ? "Sim" : "Não")?></p>
+<p><?="Query param ?status=$status"?></p>
 
 <?php require "docs/footer.php" ?>

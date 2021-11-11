@@ -1,16 +1,19 @@
 <!-- =============== Produtos ================== -->
 <div class="row">
-    <div class="col-md-16 col-sm-16 col-lg-4">
-        <div class="card">
-            <img class="card-img-top" src="imgs/notebook-acer.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h4 class="card-title">Notebook Gamer ACER</h4>
-                <p class="card-text">Notebook Gamer ACER I7-7700HQ 16GB HD 1TB GTX 1050 4GB Tela 15.6 VX5-591G-78BF</p>
-                <h2>R$ 5.095,20</h2>
-                <a href="#" class="btn btn-primary">Adicionar ao carrinho</a>
+    <?php foreach ($produtos as $produto) { ?>
+        <div class="col-md-16 col-sm-16 col-lg-4">
+            <div class="card">
+                <img class="card-img-top" src="<?=$produto["img"]?>" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title"><?=$produto["nome"]?></h4>
+                    <p class="card-text"><?=$produto["descricao"]?></p>
+                    <h2>R$ <?=number_format($produto["preco"], 2, ',', '.')?></h2>
+                    <a href="#" class="btn btn-primary">Adicionar ao carrinho</a>
+                </div>
             </div>
         </div>
-    </div>
+    <?php } ?>
+<!--
     <div class="col-md-16 col-sm-16 col-lg-4">
         <div class="card">
             <img class="card-img-top" src="imgs/notebook-hp.jpg" alt="Card image cap">
@@ -99,5 +102,6 @@
             </div>
         </div>
     </div>
+-->
 </div>
 <!-- =============== Fim dos Produtos ================== -->
