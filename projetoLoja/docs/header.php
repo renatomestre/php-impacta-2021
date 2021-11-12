@@ -1,3 +1,7 @@
+<?php
+    require "src/funcoes.php";
+?>
+
 <!-- ============= HEADER ================ -->
 <!DOCTYPE html>
 <html lang="pt-br">
