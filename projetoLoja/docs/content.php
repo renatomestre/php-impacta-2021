@@ -6,7 +6,7 @@
         </h1>
     </header>
 
-    <?php require("docs/products.php") ?>
-    <?php require("docs/pagination.php") ?>
+    <?php require __DIR__ . "/../docs/products.php" ?>
+    <?php require __DIR__ . "/../docs/pagination.php" ?>
 </main>
 <!-- =============== Fim do Conteúdo ================== -->

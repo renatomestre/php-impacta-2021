@@ -1,9 +1,8 @@
-    <!--
-    Projeto idealizado por Leonardo Tumadjian
-    Criado especialmente para Impacta curso PHP Modulo 1
-    -->
-
-    <?php require("docs/header.php") ?>
-    <?php require("docs/nav.php") ?>
-    <?php require("docs/content.php") ?>
-    <?php require("docs/footer.php") ?>
+<!--
+Projeto idealizado por Leonardo Tumadjian
+Criado especialmente para Impacta curso PHP Modulo 1
+-->
+<?php require __DIR__ . "/docs/header.php" ?>
+<?php require __DIR__ . "/docs/nav.php" ?>
+<?php require __DIR__ . "/docs/content.php" ?>
+<?php require __DIR__ . "/docs/footer.php" ?>

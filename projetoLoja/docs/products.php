@@ -7,7 +7,7 @@
 
 		if ($result->num_rows > 0) {
 			while ($produto = $result->fetch_assoc()) {
-?>
+	?>
 				<div class="col-md-16 col-sm-16 col-lg-4">
 					<div class="card">
 						<img class="card-img-top" src="<?=$produto["img"]?>" alt="Card image cap">
