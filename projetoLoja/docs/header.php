@@ -1,5 +1,5 @@
 <?php
-	const BASE_URL = "http://localhost/PHP-Novembro-2021/projetoLoja";
+	const BASE_URL = "/PHP-Novembro-2021/projetoLoja";
 
 	require __DIR__ . "/../src/funcoes.php";
 ?>

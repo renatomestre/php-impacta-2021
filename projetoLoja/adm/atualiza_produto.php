@@ -21,7 +21,7 @@
 		
 		$retornoJson = new stdClass();
 		$retornoJson->nome = $post["nome"];
-		$retornoJson->msg = $resultado ? $res = "Produto {$post["nome"]} atualizado com sucesso!" : $res = "Ops, a atualização do produto falhou.";
+		$retornoJson->msg = $resultado ? $res = "Produto atualizado com sucesso!" : $res = "Ops, a atualização do produto falhou.";
 		
 		echo json_encode($retornoJson);
 	}

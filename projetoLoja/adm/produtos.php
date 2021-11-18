@@ -45,17 +45,63 @@
 	</form>
 </div>
 
+<!-- Inicio modal Pop Msg  -->
+<div class="modal fade" id="modalProduto" role="dialog">
+	<div class="modal-dialog modal-lg">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title alert alert-primary font-weight-bold text-uppercase">Atualização</h4>
+			</div>
+			<div class="modal-body font-weight-bold">
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" id="bt-msg-close" class="btn btn-default font-weight-bold" data-dismiss="modal">Fechar</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Final modal pop msg -->
+
 <?php
 	require __DIR__ . "/../docs/footer.php";
 ?>
 
 <script>
-	let btprod, form_produto;
+	let btprod, form_produto, nome, descricao, preco, img;
 
 	btprod = $('#btproduto');
 	form_produto = $('#form_produto');
 
+	function dados () {
+		idproduto = $('input[name=idproduto]').val();
+		nome = $('input[name=nome]').val();
+		descricao = $('input[name=descricao]').val();
+		preco = $('input[name=preco]').val();
+		img = $('input[name=img]').val();
+	}
+
 	btprod.click(function () {
-		form_produto.submit();
+		// form_produto.submit();
+
+		dados();
+
+		$.post('atualiza_produto.php', {
+			idproduto,
+			nome,
+			descricao,
+			preco,
+			img
+		},
+		function (response, status) {
+			$('#modalProduto .modal-body').html('<h3>' + response.nome + '</h3>' + response.msg);
+			$('#modalProduto').modal();
+
+			$('#bt-msg-close').click(function () {
+				location.href = 'lista_produtos.php';
+			});
+		}, 'json');
 	});
 </script>

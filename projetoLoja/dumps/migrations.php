@@ -49,4 +49,19 @@
 	//         mysqli_query($con, $insert . $values);
 	//     }
 	// }
+
+	mysqli_query($con,
+		'CREATE TABLE IF NOT EXISTS compras
+		(
+			idcompra INT PRIMARY KEY AUTO_INCREMENT,
+			idcliente INT NOT NULL,
+			idproduto INT NOT NULL,
+			datahora DATETIME NOT NULL,
+			qtd INT,
+			valor DECIMAL (11,2) NOT NULL,
+			statuscompra VARCHAR (80) NOT NULL
+		)'
+	);
+
+	echo "Criou tabela compras";
 ?>
