@@ -15,7 +15,7 @@
 
 	// var_dump($post);
 
-	$con = conecta("lojaPHP7");
+	$con = conecta("lojaphp7");
 
 	$sql = "INSERT INTO clientes (nome, email, telefone, tipo_profissao, senha)
 		VALUES ('$nome', '$email', '$telefone', '$tipo_profissao', '$senha')

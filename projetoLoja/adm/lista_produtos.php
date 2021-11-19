@@ -2,7 +2,7 @@
 	require __DIR__ . "/../docs/header.php";
 	require __DIR__ . "/../docs/nav.php";
 
-	$con = conecta("lojaPHP7");
+	$con = conecta("lojaphp7");
 	$sql = "SELECT * FROM produtos ORDER BY idproduto DESC";
 	$result = $con->query($sql);
 ?>

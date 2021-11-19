@@ -2,7 +2,7 @@
 	require __DIR__ . "/../docs/header.php";
 	require __DIR__ . "/../docs/nav.php";
 
-	$conn = conecta("lojaPHP7");
+	$conn = conecta("lojaphp7");
 	$idproduto = $_GET["id"] ?? "1";
 	$sql = "SELECT * FROM produtos WHERE idproduto = $idproduto";
 	$result = $conn->query($sql);

@@ -1,5 +1,5 @@
 <?php
-	$con = new mysqli("localhost", "root", "", "lojaPHP7");
+	$con = new mysqli("localhost", "root", "", "lojaphp7");
 
 	if ($con->connect_error) {
 		die("<p>Ops! Estamos com problemas.</p>");

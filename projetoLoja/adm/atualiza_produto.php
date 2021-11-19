@@ -4,7 +4,7 @@
 	$post = limpar_post($_POST);
 
 	if (isset($post["idproduto"])) {
-		$con = conecta("lojaPHP7");
+		$con = conecta("lojaphp7");
 		
 		$sql = "UPDATE produtos SET
 					nome = '{$post["nome"]}',

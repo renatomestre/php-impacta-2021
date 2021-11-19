@@ -2,8 +2,9 @@
 	require __DIR__ . "/docs/header.php";
 	require __DIR__ . "/docs/nav.php";
 
-	$con = conecta("lojaPHP7");
-	$sql = "SELECT * FROM produtos WHERE idproduto = " . $_GET["idproduto"];
+	$con = conecta("lojaphp7");
+	$sql = "SELECT * FROM compras JOIN produtos ON compras.idproduto = produtos.idproduto
+			WHERE compras.idcliente = " . $_SESSION["id_user"];
 	$result = $con->query($sql);
 ?>
 
@@ -17,6 +18,9 @@
 				<th>Descrição</th>
 				<th>Preço</th>
 				<th>Imagem</th>
+				<th>Quantidade</th>
+				<th>Incluído em</th>
+				<th>Status</th>
 				<th></th>
 			</tr>
 		</thead>
@@ -29,8 +33,11 @@
 			<tr>
 				<td><?=$produto["nome"]?></td>
 				<td><?=$produto["descricao"]?></td>
-				<td><?=formata_reais($produto["preco"])?></td>
-				<td><?=$produto["img"]?></td>
+				<td class="text-nowrap"><?=formata_reais($produto["preco"])?></td>
+				<td><img src="<?=$produto["img"]?>" width="100"></td>
+				<td><?=$produto["qtd"]?></td>
+				<td><?=$produto["datahora"]?></td>
+				<td><?=$produto["statuscompra"]?></td>
 				<td>
 					<a id="bt-exclui" data-id="<?=$produto["idproduto"]?>">Excluir</a>
 				</td>
