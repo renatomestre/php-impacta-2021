@@ -9,11 +9,7 @@
 		$telefone = $post["telefone"];
 		$tipo_profissao = $post["tipo_profissao"];
 		$senha = password_hash($post["senha"], PASSWORD_BCRYPT);
-
-		// echo "$nome $email $telefone $tipo_profissao $senha";
 	}
-
-	// var_dump($post);
 
 	$con = conecta("lojaphp7");
 

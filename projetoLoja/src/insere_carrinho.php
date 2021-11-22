@@ -1,10 +1,9 @@
 <?php
-	require "../docs/header.php";
-	require "../docs/nav.php";
+	require "../src/funcoes.php";
 
 	$post = limpar_post($_POST);
 
-	if (isset($post["idcliente"]) && isset($post["idproduto"])) {
+	if (isset($post["add_carrinho"])) {
 		$con = conecta("lojaphp7");
 		{
 			$sql = "SELECT * FROM produtos WHERE idproduto = " . $post["idproduto"];
@@ -31,8 +30,30 @@
 		}
 		desconecta($con);
 	}
-?>
 
-<?php
-	require "../docs/footer.php";
+	if (isset($post["edit_carrinho"])) {
+		$con = conecta("lojaphp7");
+		{
+			$sql = "UPDATE compras SET qtd = {$post["qtd"]} WHERE idcompra = {$post["idcompra"]}";
+			$result = $con->query($sql);
+
+			$retorno = new stdClass();
+			$retorno->msg = $result ? "Quantidade atualizada com sucesso" : "Algo deu errado :(";
+			echo json_encode($retorno);
+		}
+		desconecta($con);
+	}
+
+	if (isset($post["remove_carrinho"])) {
+		$con = conecta("lojaphp7");
+		{
+			$sql = "DELETE FROM compras WHERE idcompra = " . $post["idcompra"];
+			$result = $con->query($sql);
+
+			$retorno = new stdClass();
+			$retorno->msg = $result ? "Item removido do carrinho" : "Algo deu errado :(";
+			echo json_encode($retorno);
+		}
+		desconecta($con);
+	}
 ?>

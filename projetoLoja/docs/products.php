@@ -12,7 +12,7 @@
 	?>
 	<div class="col-md-16 col-sm-16 col-lg-4">
 		<div class="card">
-			<img class="card-img-top" src="<?=BASE_URL . "/" . $produto["img"]?>" alt="Card image cap">
+			<img class="card-img-top" src="<?=BASE_URL . "/" . $produto["img"]?>" alt="Card image cap" style="width:50%">
 			<div class="card-body">
 				<h4 class="card-title"><?=$produto["nome"]?></h4>
 				<p class="card-text"><?=$produto["descricao"]?></p>
@@ -33,9 +33,12 @@
 <script>
 	$('.add-compra').each(function () {
 		$(this).click(function () {
+			event.preventDefault();
+
 			$.post('src/insere_carrinho.php', {
-				idcliente: $(this).attr('data-idcliente'),
-				idproduto: $(this).attr('data-idproduto'),
+				add_carrinho: true,
+				idcliente: $(this).data('idcliente'),
+				idproduto: $(this).data('idproduto'),
 				datahora: '<?=date("Y-m-d h:i:s")?>',
 				qtd: 1,
 				statuscompra: 'Pendente'
